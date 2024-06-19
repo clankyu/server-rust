@@ -13,7 +13,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         let stream = stream?;
         pool.execute(|| {
             handle_connection(stream);
-        });
+        })?;
     }
 
     Ok(())
